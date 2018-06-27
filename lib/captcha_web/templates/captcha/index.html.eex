@@ -5,11 +5,11 @@
     <input type="submit">
   </form>
   <%= if assigns[:captcha] && assigns[:answer] do %>
-    <h2 id="answer">the answer to captcha <%= @captcha %> is <%= @answer %></h2>  
+    <h3 id="answer">the answer to captcha <%= @captcha %> is <%= @answer %></h3>  
   <% end %>
    
   <%= if assigns[:error_message] do %>
-    <h2 id="error">Error: <%= @error_message %></h2>  
+    <h3 id="error">Error: <%= @error_message %></h3>  
   <% end %>
 
 </div>
