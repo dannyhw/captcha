@@ -6,13 +6,18 @@ Everything is on the home page. Enter a number in the input and the answer will 
 
 http://localhost:4000/ 
 
+algorithm is in lib/helpers/solve_captcha.ex
 
-## Commands to start things up
+## testing
+Due to the acceptance testing the tests requires phantomjs installed and it must be running.
 
-```
-sudo systemctl start postgresql
-iex -S mix phx.server
-```
+to install phantomjs:
+`http://phantomjs.org/download.html`
+
+to start phantomjs use the following:
+`phantomjs --wd`
+
+then just run `mix test` as normal
 
 ## stuff that came with the pheonix setup
 To start your Phoenix server:
