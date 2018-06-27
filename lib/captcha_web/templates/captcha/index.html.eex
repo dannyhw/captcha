@@ -1,0 +1,15 @@
+<div class="jumbotron">
+  <h2>Captcha challenge</h2>
+  <form action="/" method="GET">
+    <input required type="text" name="captcha">
+    <input type="submit">
+  </form>
+  <%= if assigns[:captcha] && assigns[:answer] do %>
+    <h2 id="answer">the answer to captcha <%= @captcha %> is <%= @answer %></h2>  
+  <% end %>
+   
+  <%= if assigns[:error_message] do %>
+    <h2 id="error">Error: <%= @error_message %></h2>  
+  <% end %>
+
+</div>
