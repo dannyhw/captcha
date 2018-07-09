@@ -1,13 +1,13 @@
 defmodule SolveCaptcha do
-  def solve([x | [x]]) do
+  defp solve([x | [x]]) do
     x
   end
 
-  def solve([_x | [_y]]) do
+  defp solve([_x | [_y]]) do
     0
   end
 
-  def solve([h1, h2 | t]) do
+  defp solve([h1, h2 | t]) do
     solve([h1, h2]) + solve([h2] ++ t)
   end
 
@@ -34,13 +34,8 @@ defmodule SolveCaptcha do
     0
   end
 
-  def calculate_captcha([x | [x]]) do
-    if is_number(x) do
-      x
-    else
-      {num, _} = Integer.parse(x)
-      num
-    end
+  def calculate_captcha([x | [x]]) when is_number(x) do
+    x
   end
 
   def calculate_captcha(list) do

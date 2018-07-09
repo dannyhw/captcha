@@ -67,10 +67,13 @@ defmodule SolveCaptchaTest do
       SolveCaptcha.calculate_captcha(["a","b","c"])
     end
     assert_raise ArgumentError, "invalid arugment type, should be a string of numbers or a list of numbers", fn ->
-      SolveCaptcha.calculate_captcha(["a","b"])
+      SolveCaptcha.calculate_captcha(["a","a"])
     end
     assert_raise ArgumentError, "invalid arugment type, should be a string of numbers or a list of numbers", fn ->
       SolveCaptcha.calculate_captcha(["a"])
+    end
+    assert_raise ArgumentError, "invalid arugment type, should be a string of numbers or a list of numbers", fn ->
+      SolveCaptcha.calculate_captcha("a")
     end
   end
 
